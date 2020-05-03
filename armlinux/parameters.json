@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "networkInterfaceName": {
+      "value": "nic-REPLACE_NAME"
+    },
+    "enableAcceleratedNetworking": {
+      "value": true
+    },
+    "networkSecurityGroupName": {
+      "value": "nsg-REPLACE_NAME"
+    },
+    "networkSecurityGroupRules": {
+      "value": [
+        {
+          "name": "default-allow-ssh",
+          "properties": {
+            "priority": 1000,
+            "protocol": "TCP",
+            "access": "Allow",
+            "direction": "Inbound",
+            "sourceApplicationSecurityGroups": [],
+            "destinationApplicationSecurityGroups": [],
+            "sourceAddressPrefix": "",
+            "sourcePortRange": "*",
+            "destinationAddressPrefix": "*",
+            "destinationPortRange": "22"
+          }
+        }
+      ]
+    },
+    "subnetName": {
+      "value": "default"
+    },
+    "virtualNetworkName": {
+      "value": "vnet-REPLACE_NAME"
+    },
+    "addressPrefixes": {
+      "value": [
+        "10.0.1.0/24"
+      ]
+    },
+    "subnets": {
+      "value": [
+        {
+          "name": "default",
+          "properties": {
+            "addressPrefix": "10.0.1.0/24"
+          }
+        }
+      ]
+    },
+    "publicIpAddressName": {
+      "value": "pip-REPLACE_NAME"
+    },
+    "publicIpAddressType": {
+      "value": "Dynamic"
+    },
+    "publicIpAddressSku": {
+      "value": "Basic"
+    },
+    "virtualMachineName": {
+      "value": "vm-REPLACE_NAME"
+    },
+    "virtualMachineRG": {
+      "value": "Group-REPLACE_NAME"
+    },
+    "osDiskName": {
+      "value": "disk-REPLACE_NAME"
+    },
+    "osDiskSizeGB": {
+      "value": "32"
+    },
+    "virtualMachineSize": {
+      "value": "Standard_F4s"
+    },
+    "adminUsername": {
+      "value": ""
+    },
+    "adminPassword": {
+      "value": ""
+    }
+  }
+}
